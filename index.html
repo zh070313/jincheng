@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晋城 - NFC山西旅游攻略</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", serif;
+        }
+        body {
+            background-color: #fef9f2;
+            color: #5a3e2b;
+            line-height: 1.6;
+            padding-bottom: 30px;
+        }
+        .header {
+            background-color: #f8e9d1;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #e6c9a8;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #8b4513;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 14px;
+            color: #a0522d;
+        }
+        .tab-bar {
+            display: flex;
+            background-color: #f5e6d3;
+            border-bottom: 1px solid #e6c9a8;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            background: none;
+            font-size: 16px;
+            color: #8b4513;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background-color: #f8d7a9;
+            font-weight: bold;
+            border-bottom: 3px solid #d2691e;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .section-title {
+            font-size: 22px;
+            color: #8b4513;
+            margin: 20px 0 15px;
+            padding-left: 10px;
+            border-left: 4px solid #d2691e;
+        }
+        .item-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+            overflow: hidden;
+        }
+        .item-card img {
+            width: 100%;
+            max-height: 300px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .item-card h3 {
+            font-size: 18px;
+            color: #8b4513;
+            margin-bottom: 8px;
+        }
+        .item-card p {
+            font-size: 14px;
+            color: #6b4423;
+        }
+        .dialect-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .dialect-item {
+            background-color: #fff;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(139, 69, 19, 0.1);
+        }
+        .dialect-word {
+            font-size: 16px;
+            font-weight: bold;
+            color: #8b4513;
+        }
+        .dialect-pinyin {
+            font-size: 13px;
+            color: #a0522d;
+            margin: 3px 0;
+        }
+        .dialect-mean {
+            font-size: 14px;
+            color: #6b4423;
+        }
+        .culture-intro {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+        @media (max-width: 768px) {
+            .dialect-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>晋城市</h1>
+        <p>太行明珠 · 相府故里</p>
+    </div>
+
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('route')">旅游路线</button>
+        <button class="tab-btn" onclick="switchTab('dialect')">人文方言</button>
+        <button class="tab-btn" onclick="switchTab('culture')">习俗非遗</button>
+    </div>
+
+    <!-- 旅游路线模块 -->
+    <div id="route" class="tab-content active">
+        <h2 class="section-title">常规旅游路线</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/FE2D2JusZO" alt="皇城相府">
+            <h3>皇城相府</h3>
+            <p>陈廷敬的故居，清代的城堡式官宅，内城与外城结合，是北方的文化巨族之宅，感受相府的文化与晋城的历史。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/EugPmYQL1F" alt="王莽岭">
+            <h3>王莽岭</h3>
+            <p>太行的名山，王莽的传说在这里，挂壁公路与云海，是太行的核心景区，感受太行的风光与王莽的传说。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/rXkW2UEkW6" alt="珏山">
+            <h3>珏山</h3>
+            <p>晋城的名山，双峰的月景是奇观，丹河的山水秀美，是晋城的名胜，感受珏山的风光与晋城的文化。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/UZZdgWCi1X" alt="柳氏民居">
+            <h3>柳氏民居</h3>
+            <p>柳氏的民居，清代的民居建筑，大院的布局精巧，雕刻精美，是晋城的古建代表，感受古建的文化与晋城的历史。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/kv6RtWg3bz" alt="晋城古城">
+            <h3>晋城古城</h3>
+            <p>泽州的古城，古城里的古建保存完好，程颢书院的古建都是国宝，古城的烟火气浓厚，晚上的古城更是灯火辉煌，感受古城的烟火气与历史。</p>
+        </div>
+
+        <h2 class="section-title">红色研学路线</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/VEnob08lM0" alt="八路军太行纪念馆">
+            <h3>八路军太行纪念馆</h3>
+            <p>记录了八路军的太行抗战历程，这里是太行抗日根据地的核心，感悟革命先辈的奉献，传承红色精神，是红色教育的基地。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/EBmR2fla4K" alt="晋豫边抗日纪念馆">
+            <h3>晋豫边抗日纪念馆</h3>
+            <p>记录了晋豫边的抗日历程，这里是晋豫抗日根据地的核心，感悟革命先辈的奉献，传承红色精神，是红色教育的基地。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/hm7gUZeLpO" alt="太行太岳烈士陵园">
+            <h3>太行太岳烈士陵园</h3>
+            <p>纪念太行太岳的革命烈士，这里记录了太行太岳的革命历程，感悟革命先辈的奉献，传承红色精神，是红色教育的基地。</p>
+        </div>
+    </div>
+
+    <!-- 人文方言模块 -->
+    <div id="dialect" class="tab-content">
+        <div class="culture-intro">
+            <h3>方言片区</h3>
+            <p>晋城方言属晋语上党片，保留了晋语的入声，是晋东南地区的特色方言，各区县口音差异较大，承载着泽州的语言文化与历史记忆。</p>
+        </div>
+
+        <h2 class="section-title">本地方言词句</h2>
+        <div class="dialect-list">
+            <div class="dialect-item">
+                <div class="dialect-word">圪捣</div>
+                <div class="dialect-pinyin">gē dǎo</div>
+                <div class="dialect-mean">释义：捣乱、折腾</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">圪溜</div>
+                <div class="dialect-pinyin">gē liū</div>
+                <div class="dialect-mean">释义：溜达、闲逛</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">日脏</div>
+                <div class="dialect-pinyin">rì zāng</div>
+                <div class="dialect-mean">释义：脏、不干净</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">夜来</div>
+                <div class="dialect-pinyin">yè lái</div>
+                <div class="dialect-mean">释义：昨天</div>
+            </div>
+            <div class="dialect-item">
+                <div class="dialect-word">不赖</div>
+                <div class="dialect-pinyin">bù lài</div>
+                <div class="dialect-mean">释义：不错、挺好</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">人文情怀</h2>
+        <div class="culture-intro">
+            <p>晋城是太行的宝地，泽州的老区，这里的百姓既有泽州人的精明，又有太行人的坚韧。相府的文化在这里传承，太行的革命精神在这里延续，抗战时期，这里是晋豫边抗日根据地的核心，为抗战做出了巨大的贡献。一代代晋城人，用自己的双手，把太行的资源变成了发展的动力，也传承着这份厚重的文化与精神。</p>
+        </div>
+    </div>
+
+    <!-- 习俗非遗模块 -->
+    <div id="culture" class="tab-content">
+        <h2 class="section-title">特色美食</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/v3LPaEh3f5" alt="高平烧豆腐">
+            <h3>高平烧豆腐</h3>
+            <p>高平的特色小吃，用豆腐制作，烧烤而成，搭配蒜泥调料，酸辣可口，是当地人的最爱，也是晋城的特色小吃，深受百姓喜爱。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/zjrNiuU45o" alt="阳城肉罐肉">
+            <h3>阳城肉罐肉</h3>
+            <p>阳城的特色美食，用肉制作，罐炖而成，口感软糯，肥而不腻，是当地人的宴席必备菜，也是晋城的特色美食，深受喜爱。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/df7VSwlBns" alt="高平十大碗">
+            <h3>高平十大碗</h3>
+            <p>高平的特色宴席，十道菜品，清淡适口，是当地人的宴席必备，寓意十全十美，也是晋城的特色美食，深受喜爱。</p>
+        </div>
+
+        <h2 class="section-title">非遗项目</h2>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/EUsBA1gSzA" alt="晋剧">
+            <h3>晋剧</h3>
+            <p>国家级非物质文化遗产，山西的地方戏曲，曲调悠扬，表演生动，是山西四大梆子之一，深受百姓喜爱，是晋城的传统艺术。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/9WtRUquxVz" alt="上党梆子">
+            <h3>上党梆子</h3>
+            <p>国家级非物质文化遗产，上党的地方戏曲，曲调高亢，表演生动，是山西四大梆子之一，深受百姓喜爱，是晋城的传统艺术。</p>
+        </div>
+        <div class="item-card">
+            <img src="https://aka.doubaocdn.com/s/BHVBlpezVk" alt="晋城剪纸">
+            <h3>晋城剪纸</h3>
+            <p>省级非物质文化遗产，晋城的传统剪纸，色彩明艳，制作精美，是当地的传统艺术，深受喜爱，也是当地的特色礼品。</p>
+        </div>
+
+        <h2 class="section-title">传统民俗</h2>
+        <div class="culture-intro">
+            <p>晋城的传统民俗带着浓浓的泽州特色，古城庙会历史悠久，每逢庙会，各地的商贩、艺人齐聚，热闹非凡；元宵节的闹红火更是热闹，上党梆子、锣鼓、社火表演应有尽有。上党梆子的戏曲代代传承，太行的文化更是深深融入了晋城人的血脉，展现了晋城人的质朴与坚韧，也传承着这份厚重的太行文化。</p>
+        </div>
+    </div>
+
+    <script>
+        function switchTab(tabName) {
+            // 隐藏所有内容
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(item => {
+                item.classList.remove('active');
+            });
+            // 取消所有按钮的激活状态
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(item => {
+                item.classList.remove('active');
+            });
+            // 激活当前的
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
